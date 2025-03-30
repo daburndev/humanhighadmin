@@ -16,13 +16,16 @@ export default function Flowers() {
     const fetchProducts = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("http://localhost:3000/api/flowers", {
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          withCredentials: false,
-        });
+        const response = await axios.get(
+          "https:/forhumanhigh.vercel.app/api/flowers",
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            withCredentials: false,
+          }
+        );
         setProducts(response.data);
         setError(null);
       } catch (err) {
